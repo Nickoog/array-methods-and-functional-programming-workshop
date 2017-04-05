@@ -48,6 +48,14 @@ function every(predicate, theArray) {
 }
 
 function some(predicate, theArray) {
+  
+  for(var i = 0; i < theArray.length; i++){
+    if(predicate(theArray[i])){
+      return true;
+      break;
+    }
+  }
+  return false;
 
 }
 
