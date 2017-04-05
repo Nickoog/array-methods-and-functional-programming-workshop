@@ -88,6 +88,24 @@ function findIndex(predicate, theArray) {
 
 function first(n, theArray) {
 
+  var tempArray = [];
+  
+  if (Array.isArray(n)){
+    return n[0]
+  }
+  
+  if (n < theArray.length){
+    for (var i = 0; i < n; i++){
+      tempArray.push(theArray[i])
+    }
+    return tempArray;
+  }
+  
+  else if (n > theArray.length){
+    
+    return theArray;
+  }
+
 }
 
 function last(n, theArray) {
