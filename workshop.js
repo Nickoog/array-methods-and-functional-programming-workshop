@@ -7,7 +7,14 @@ function forEach(callback, theArray) {
 }
 
 function map(mappingFunction, theArray) {
-
+  
+  var newArray = [];
+  
+  forEach(function(item){
+    newArray.push(mappingFunction(item))
+  }, theArray)
+    
+  return newArray;
 }
 
 function filter(predicate, theArray) {
