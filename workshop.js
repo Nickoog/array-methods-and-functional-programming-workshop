@@ -38,11 +38,13 @@ function filter(predicate, theArray) {
 
 function every(predicate, theArray) {
   
-  forEach(function(item){
-    if(predicate(item)){
-      return true
+  for(var i = 0; i < theArray.length; i++){
+    if(!predicate(theArray[i])){
+      return false;
+      break;
     }
-  }, theArray)
+  }
+  return true;
 }
 
 function some(predicate, theArray) {
