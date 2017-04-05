@@ -8,21 +8,41 @@ function forEach(callback, theArray) {
 
 function map(mappingFunction, theArray) {
   
-  var newArray = [];
+  var tempArray = [];
   
   forEach(function(item){
-    newArray.push(mappingFunction(item))
+    
+    tempArray.push(mappingFunction(item))
+    
   }, theArray)
     
-  return newArray;
+  return tempArray;
 }
 
 function filter(predicate, theArray) {
+  
+  var tempArray = [];
+  
+  forEach(function(item){
+    
+    if(predicate(item)){
+      
+      tempArray.push(item)
+    }
+    
+  }, theArray)
+  
+  return tempArray;
 
 }
 
 function every(predicate, theArray) {
-
+  
+  forEach(function(item){
+    if(predicate(item)){
+      return true
+    }
+  }, theArray)
 }
 
 function some(predicate, theArray) {
