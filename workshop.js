@@ -60,8 +60,15 @@ function some(predicate, theArray) {
 }
 
 function indexOf(item, theArray) {
-
+  
+  for (var i = 0; i < theArray.length; i++){
+    if(item === theArray[i]) {
+      return i;
+    }
+  }
+  return -1
 }
+
 
 function findIndex(predicate, theArray) {
 
